@@ -167,8 +167,8 @@ def generate(data_fn, out_fn, N_epochs):
     out_stream.insert(0.0, tempo.MetronomeMark(number=bpm))
 
     # Play the final stream through output (see 'play' lambda function above)
-    play = lambda x: midi.realtime.StreamPlayer(x).play()
-    play(out_stream)
+    # play = lambda x: midi.realtime.StreamPlayer(x).play()
+    # play(out_stream)
 
     # save stream
     mf = midi.translate.streamToMidiFile(out_stream)
