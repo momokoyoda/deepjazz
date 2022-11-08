@@ -20,6 +20,8 @@ import sys
 
 from music21 import *
 import numpy as np
+# import mido 
+# from mido import MidiFile
 
 from grammar import *
 from preprocess import *
@@ -191,6 +193,9 @@ def main(args):
     else:               out_fn += '_epochs.midi'
 
     generate(data_fn, out_fn, N_epochs)
+# midoというライブラリを追加してファイル保存できるようにする
+    # mid = MidiFile()
+    # mid.save('deepjazz_on_metheny...' + str(N_epochs))
 
 ''' If run as script, execute main '''
 if __name__ == '__main__':
