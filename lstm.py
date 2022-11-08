@@ -22,7 +22,7 @@ from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 import numpy as np
 #新しく追加
-from tensorflow.keras.utils import plot_model
+# from tensorflow.keras.utils import plot_model
 
 
 ''' Build a 2-layer LSTM from a training corpus '''
@@ -61,7 +61,7 @@ def build_model(corpus, val_indices, max_len, N_epochs=300):
     model.fit(X, y, batch_size=128, nb_epoch=N_epochs)
 
     #生成したモデルの可視化
-    SAVE_DATA_DIR_PATH = "C:/graduation_research/forkeddeepjazz/file"
-    plot_model(model, to_file=SAVE_DATA_DIR_PATH + "plot_model.png")
+    # SAVE_DATA_DIR_PATH = "C:/graduation_research/forkeddeepjazz/file"
+    # plot_model(model, to_file=SAVE_DATA_DIR_PATH + "plot_model.png")
 
     return model
