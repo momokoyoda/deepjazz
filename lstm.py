@@ -10,13 +10,23 @@ https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
 
 from __future__ import print_function
 
+# tensorfrowからインポートしてみる
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Input, Dense
+# from tensorflow.keras.layers.recurrent import LSTM
+# import numpy as np
+
+
 from keras.models import Sequential
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 import numpy as np
+#新しく追加
+from tensorflow.keras.utils import plot_model
+
 
 ''' Build a 2-layer LSTM from a training corpus '''
-def build_model(corpus, val_indices, max_len, N_epochs=128):
+def build_model(corpus, val_indices, max_len, N_epochs=300):
     # number of different values or words in corpus
     N_values = len(set(corpus))
 
@@ -49,5 +59,9 @@ def build_model(corpus, val_indices, max_len, N_epochs=128):
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
     model.fit(X, y, batch_size=128, nb_epoch=N_epochs)
+
+    #生成したモデルの可視化
+    SAVE_DATA_DIR_PATH = "C:/graduation_research/forkeddeepjazz/file"
+    plot_model(model, to_file=SAVE_DATA_DIR_PATH + "plot_model.png")
 
     return model
