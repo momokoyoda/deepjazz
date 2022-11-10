@@ -26,7 +26,7 @@ import numpy as np
 
 
 ''' Build a 2-layer LSTM from a training corpus '''
-def build_model(corpus, val_indices, max_len, N_epochs=300):
+def build_model(corpus, val_indices, max_len, N_epochs=500):
     # number of different values or words in corpus
     N_values = len(set(corpus))
 
