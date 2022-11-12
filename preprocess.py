@@ -35,7 +35,8 @@ def __parse_midi(data_fn):
     # Also add Electric Guitar. 
     melody_voice.insert(0, instrument.ElectricGuitar())
     # melody_voice.insert(0, key.KeySignature(sharps=1, mode='major'))
-    melody_voice.insert(0, key.KeySignature(sharps=1))
+    #元と同じ調にしている
+    melody_voice.insert(0, key.KeySignature(sharps=0))
 
     # The accompaniment parts. Take only the best subset of parts from
     # the original data. Maybe add more parts, hand-add valid instruments.
