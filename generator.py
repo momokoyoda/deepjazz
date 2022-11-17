@@ -108,8 +108,8 @@ def generate(data_fn, out_fn, N_epochs):
     diversity = 0.5
 
     # musical settings
-    #bpmも同じままにしてみる
-    bpm = 118
+    #bpmをランダムに出せるようにする
+    bpm = np.random.randint(low=120, high=140)
 
     # get data
     chords, abstract_grammars = get_musical_data(data_fn)
